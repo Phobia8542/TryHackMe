@@ -1,0 +1,32 @@
+Sensitive Data Exposure Challenge
+
+Gobuster Enum: gobuster dir -u $IP -w /usr/share/wordlists/dirbuster/directory-list-2.3-small.txt
+
+/login                (Status: 301) [Size: 312] [--> http://10.10.206.33/login/
+/assets               (Status: 301) [Size: 313] [--> http://10.10.206.33/assets/
+/api                  (Status: 301) [Size: 310] [--> http://10.10.206.33/api/
+/console              (Status: 301) [Size: 314] [--> http://10.10.206.33/console/
+
+
+Nmap Scan: sudo nmap -sS -A -Pn
+
+Not shown: 998 closed tcp ports (reset)
+PORT     STATE    SERVICE      VERSION
+80/tcp   open     http         Apache httpd 2.4.29 ((Ubuntu))
+|_http-title: Sense and Sensitivity
+|_http-server-header: Apache/2.4.29 (Ubuntu)
+3283/tcp filtered netassistant
+
+
+==> curl http://$IP | found comment about db in /assets/
+==> on http://$IP/assets/ downloaded webapp.db
+
+hydra brute force: hydra -l admin -P /usr/share/wordlists/rockyou
+
+
+
+How will I find out what the admin hash is?
+
+What are the names of the other users?
+
+
