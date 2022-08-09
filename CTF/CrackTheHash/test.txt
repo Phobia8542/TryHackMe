@@ -1,71 +1,0 @@
-hashcat (v6.1.1) starting...
-
-OpenCL API (OpenCL 1.2 pocl 1.6, None+Asserts, LLVM 9.0.1, RELOC, SLEEF, DISTRO, POCL_DEBUG) - Platform #1 [The pocl project]
-=============================================================================================================================
-* Device #1: pthread-Intel(R) Core(TM) m3-8100Y CPU @ 1.10GHz, 2038/2102 MB (1024 MB allocatable), 2MCU
-
-Minimum password length supported by kernel: 0
-Maximum password length supported by kernel: 15
-
-Counting lines in aReallyHardSalt.txt...[2KCounted lines in aReallyHardSalt.txt...[2KParsed Hashes: 1/1 (100.00%)[2KParsed Hashes: 1/1 (100.00%)[2KSorting hashes...[2KSorted hashes...[2KRemoving duplicate hashes...[2KRemoved duplicate hashes...[2KSorting salts...[2KSorted salts...[2KComparing hashes with potfile entries...[2KCompared hashes with potfile entries...[2KGenerating bitmap tables...[2KGenerated bitmap tables...[2KHashes: 1 digests; 1 unique digests, 1 unique salts
-Bitmaps: 16 bits, 65536 entries, 0x0000ffff mask, 262144 bytes, 5/13 rotates
-Rules: 1
-
-Applicable optimizers applied:
-* Optimized-Kernel
-* Zero-Byte
-* Single-Hash
-* Single-Salt
-* Uses-64-Bit
-
-Watchdog: Hardware monitoring interface not found on your system.
-Watchdog: Temperature abort trigger disabled.
-
-Initializing device kernels and memory...[2KInitializing backend runtime for device #1...[2KInitialized backend runtime for device #1...[2KHost memory required for this attack: 64 MB
-
-Initialized device kernels and memory...[2KDictionary cache hit:
-* Filename..: /usr/share/wordlists/rockyou.txt
-* Passwords.: 14344384
-* Bytes.....: 139921497
-* Keyspace..: 14344384
-
-[s]tatus [p]ause [b]ypass [c]heckpoint [q]uit => 
-
-Session..........: hashcat
-Status...........: Running
-Hash.Name........: sha512crypt $6$, SHA512 (Unix)
-Hash.Target......: $6$aReallyHardSalt$6WKUTqzq.UQQmrm0p/T7MPpMbGNnzXPM...ZAs02.
-Time.Started.....: Tue Apr 19 01:52:46 2022 (1 min, 4 secs)
-Time.Estimated...: Tue Apr 19 09:09:10 2022 (7 hours, 15 mins)
-Guess.Base.......: File (/usr/share/wordlists/rockyou.txt)
-Guess.Queue......: 1/1 (100.00%)
-Speed.#1.........:      548 H/s (6.27ms) @ Accel:8 Loops:1024 Thr:1 Vec:4
-Recovered........: 0/1 (0.00%) Digests
-Progress.........: 35133/14344384 (0.24%)
-Rejected.........: 13/35133 (0.04%)
-Restore.Point....: 35133/14344384 (0.24%)
-Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:4096-5000
-Candidates.#1....: rocawear1 -> public
-
-[s]tatus [p]ause [b]ypass [c]heckpoint [q]uit => 
-
-                                                 Session..........: hashcat
-Status...........: Quit
-Hash.Name........: sha512crypt $6$, SHA512 (Unix)
-Hash.Target......: $6$aReallyHardSalt$6WKUTqzq.UQQmrm0p/T7MPpMbGNnzXPM...ZAs02.
-Time.Started.....: Tue Apr 19 01:52:46 2022 (1 min, 37 secs)
-Time.Estimated...: Tue Apr 19 09:14:20 2022 (7 hours, 19 mins)
-Guess.Base.......: File (/usr/share/wordlists/rockyou.txt)
-Guess.Queue......: 1/1 (100.00%)
-Speed.#1.........:      541 H/s (5.74ms) @ Accel:8 Loops:1024 Thr:1 Vec:4
-Recovered........: 0/1 (0.00%) Digests
-Progress.........: 52664/14344384 (0.37%)
-Rejected.........: 24/52664 (0.05%)
-Restore.Point....: 52664/14344384 (0.37%)
-Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:0-1024
-Candidates.#1....: belem -> bananarama
-
-
-
-Started: Tue Apr 19 01:52:19 2022
-[2KStopped: Tue Apr 19 01:54:25 2022
