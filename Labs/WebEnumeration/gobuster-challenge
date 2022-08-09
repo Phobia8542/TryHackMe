@@ -1,0 +1,15 @@
+# Notes for Gobuster challenge section of Web Enumeration room
+
+# room needs to be added to hosts - echo "x.x.x.x webenum.thm" >> /etc/hosts
+# Virtual hosts will need to be added - echo "x.x.x.x mysubdomain.webenum.thm" >> /etc/hosts
+
+Gobuster scans:
+# gobuster dir -u http://10.10.64.41 -w /usr/share/wordlists/dirb/common.txt
+/index.html           (Status: 200) [Size: 1202]
+/js                   (Status: 301) [Size: 307] [--> http://10.10.64.41/js/]
+/public               (Status: 301) [Size: 311] [--> http://10.10.64.41/public/]
+/css                  (Status: 301) [Size: 308] [--> http://10.10.64.41/css/]
+/images               (Status: 301) [Size: 311] [--> http://10.10.64.41/images/]
+/.hta                 (Status: 403) [Size: 276]
+/.htaccess            (Status: 403) [Size: 276]
+/.htpasswd            (Status: 403) [Size: 276]

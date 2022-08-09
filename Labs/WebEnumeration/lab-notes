@@ -1,0 +1,20 @@
+# Notes taken from Web Enumeration room on THM - https://tryhackme.com/room/webenumerationv2
+
+General
+# Manually inspect page 
+# Use debugging tools
+# Test what code can be executed
+# Recommend SecList for brute forcing
+Gobuster
+# Modes - dir dns vhost
+# dir - directory enumeration
+# dns - subdomain brute forcing
+# vhost - virtual host brute forcing
+WPScan - Word Press Framework tool
+# Sensitive Information Disclosure - Plugin & themes installed - related CVEs
+# Path Discovery - Misconfigured file permissiosn
+# Weak Password Policies - Password bruteforcing
+# Presence of Default Installation - Default file discovery
+# Testing Web Application Firewalls - Common WAF plugins
+# Uses database for reference
+# wpscan --update - update db

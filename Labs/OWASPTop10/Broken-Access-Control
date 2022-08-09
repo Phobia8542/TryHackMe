@@ -1,0 +1,12 @@
+# Notes for Broken Access Control challenge on THM OWASPTop10 room - https://tryhackme.com/room/owasptop10
+
+User Credentials: noot:test1234
+
+Steps
+# Open login page - Use login creds
+# On page: I am noot!
+# Inspect page - no results
+# Tested x.x.x.x/note.php?note=1-20 using burp repeater
+# Sent to intruder on burpsuite - filtered by length
+# note=0 - length: 188 (same as note=1)
+# On http://10.10.1.35/note.php?note=0 - flag{fivefourthree}

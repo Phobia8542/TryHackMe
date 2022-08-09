@@ -1,0 +1,32 @@
+# Notes taken from Upload Vulnerabilties room on THM
+# Part of Web fundamental Learning Path
+# Remove hosts after room completion
+
+For this room the hosts file must be updated - MUST have admin/root privilege
+# Linux/Unix - /etc/hosts
+# Windows - C:\Windows\System32\drivers\etc\hosts
+
+Hosts - every time the room is accessed the host IP must be updated
+# MACHINE_IP    overwrite.uploadvulns.thm shell.uploadvulns.thm java.uploadvulns.thm annex.uploadvulns.thm magic.uploadvulns.thm jewel.uploadvulns.thm demo.uploadvulns.thm
+
+Reasons for why VM may not work
+#1 Duplicate entries in host file
+#2 VPN on top of THM VPN connection
+
+Topics covered
+# Overwriting Exisisting files on server
+# Eploading & executing shells on server
+# Bypassing Client-side filtering
+# Bypassing various kinds of server-side filtering
+# Fooling content type validation checks
+
+Tools used
+# Gobuster
+# Burpsuite / OWASP ZAP
+# Wappalyzer - browser extension
+
+General
+# Make the distinction between server & client-side filtering
+# Take note of error messages based on actions
+# Take note of server response 
+# Burp suite repeater is a great way of testing responses 

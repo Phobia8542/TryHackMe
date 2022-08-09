@@ -1,0 +1,49 @@
+# Notes taken from different sections of OWASP Top 10 Room on THM - https://tryhackme.com/room/owasptop10
+# The room is broken up into Severity levels from 1-10
+
+Topics covered
+#S1 Injections - OS command
+#S2 Broken Authentication
+#S3 Sensitive Data Exposure
+#S4 XML Enternal Entitiy - DTD, XXE payloads & Exploitation
+#S5 Broken Access Control - IDOR
+#S6 Security Misconfiguration
+#S7 XSS - Cross-site Scripting
+#S8 Insecure Deserialization - Objects, Deserialization, Cookies & Code execution
+#S9 Components With Known Vulnerabilities
+#S10 Insufficient Logging & Monitoring
+
+Broken Access Control - IDOR - Task 6 & 7
+# Based on authorization users shouldn't be able to see certain pages/content
+# Regular visitors shouldn't have access to protected pages/content
+# Broken AC allows for - viewing of sensitive data & access to unauthorized functionality
+# IDOR - Insecure Direct Object Reference - type of BAC vulnerability
+# Can change user ID parameter - www.example.com/account_id=1234 > www.example.com/account_id=1235 - IDOR
+XML External Entity - Task 12
+# XML parser/data vulnerability
+# Attacker can interact with backend / external systems - read files on system
+# Can be used for DoS, SSRF, port scanning & RCE
+# IB-XXE - In-band XXE - immediate response to XXE payload
+# OOB-XXE - Out-of-band / blind - no immediate response / found in files on (their own) server 
+XXE - Task 13
+# XML - eXtensible Markup Language (defines rules for encoding documents - both human & machine-readable)
+# XML - Non platform & Programming language specific (universally accepted)
+# XML - Can be stored & moved without efforting data presentation - does not need to be converted
+# XML - uses DTD & Schema validation to ensure document is syntax error free
+# XML - <?xml version="1.0" encoding="UTF-8"?> - XML prolog (good practice)
+# XML - ROOT element references to "tags" used for syntax 
+# XML - is case sensitive
+XXE DTD - Task 14 
+# DTD - Document Type Definition
+# .dtd - extension
+# Tags should be seen as "elements" - !ELEMENT !DOCTYPE !ENTITY
+# #PCDATA - Parseable character data
+XXE Payload - Task 15
+# <!DOCTYPE root [<!ENTITY read SYSTEM 'file:///etc/passwd'>]> <root>&read;</root> - display /etc/passwd
+# <!DOCTYPE replace [<!ENTITY name "feast"> ]>
+# <userInfo> <firstName>falcon</firstName> <lastName>&name;</lastName> </userInfo>
+XXE Exploiting - Task 16
+# Payloads should be URL encoded
+
+Resources & Citations
+# OWASP BAC - https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control.html

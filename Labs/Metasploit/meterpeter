@@ -1,0 +1,53 @@
+# Notes taken from the Meterpreter room on THM (3rd module in Metasploit series)
+
+# Meterpreter runs on target system without being installed (runs in memory - not written to disk) - antivirus evasion
+# Uses encrypted communication with servers to avoid IPS/IDS - TLS encryption
+# Meterpreter is recognized by (major) antivirus software
+# msfvenom --list payloads | grep payloads
+# meterpreter works for different platforms (Operating systems & Programming languages)
+# migrate session for (more) stable session - migrate <pid>
+# Can escalate/lower user privilege by migrating session
+Hashes
+# Windows passwords are stored in SAM (Security Account Manager) database in NTLM (New Technology LAN Manager) format
+# NTLM hashes ordinarily are very difficult to crack
+# Pass-the-hash attack - NTLM hashes can be used on systems where the user has access
+# Online NTLM databases & rainbow table attack
+Post exploit
+# getuid 
+# getsystem
+# get meterpreter pid: getpid 
+# ps: spoolsv.exe (meterpreter ID)
+# keyscan_start
+# keyscan_stop
+# keyscan_dump
+# hashdump
+# search
+# shell - CTRL+Z to return to meterpreter
+# load - python, kiwi, etc (use help after loading module)
+Payloads:
+Staged
+# Send stager from attacker machine
+# From target request the rest of the payload
+# Allows for smaller payloads
+Single
+# Payload is sent and execute on target machine
+Meterpreter version params
+# Target Operating system - Linux, Windows, Android, etc
+# Components available on target system - Python, PHP website, etc
+# Network connection types - Allow raw TCP connections, reverse HTTPS conenction, IPv4 & IPv6
+Tool categories
+# Built-in commands
+# Meterpreter tools
+# Meterpreter scripting
+Command categories
+# core commands
+# file system commands
+# Networking commands
+# System commands 
+# User interface commands
+# Webcam commands
+# Audio output commands
+# Elevate commands
+# Password database commands
+# Timestomp commands
+

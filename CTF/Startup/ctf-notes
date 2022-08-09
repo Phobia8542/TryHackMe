@@ -1,0 +1,71 @@
+# Notes taken from Startup CTF on THM
+
+# Credentials: 
+logins: 
+# Maya
+
+# Nmap Scan: nmap -A -T4 -oN nmapscan -p- $IP
+ 
+Not shown: 65532 closed tcp ports (conn-refused)
+PORT   STATE SERVICE VERSION
+21/tcp open  ftp     vsftpd 3.0.3
+| ftp-anon: Anonymous FTP login allowed (FTP code 230)
+| drwxrwxrwx    2 65534    65534        4096 Nov 12  2020 ftp [NSE: writeable]
+| -rw-r--r--    1 0        0          251631 Nov 12  2020 important.jpg
+|_-rw-r--r--    1 0        0             208 Nov 12  2020 notice.txt
+| ftp-syst:
+|   STAT:
+| FTP server status:
+|      Connected to 10.13.44.112
+|      Logged in as ftp
+|      TYPE: ASCII
+|      No session bandwidth limit
+|      Session timeout in seconds is 300
+|      Control connection is plain text
+|      Data connections will be plain text
+|      At session startup, client count was 2
+|      vsFTPd 3.0.3 - secure, fast, stable
+|_End of status
+22/tcp open  ssh     OpenSSH 7.2p2 Ubuntu 4ubuntu2.10 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey:
+|   2048 b9:a6:0b:84:1d:22:01:a4:01:30:48:43:61:2b:ab:94 (RSA)
+|   256 ec:13:25:8c:18:20:36:e6:ce:91:0e:16:26:eb:a2:be (ECDSA)
+|_  256 a2:ff:2a:72:81:aa:a2:9f:55:a4:dc:92:23:e6:b4:3f (ED25519)
+80/tcp open  http    Apache httpd 2.4.18 ((Ubuntu))
+|_http-title: Maintenance
+|_http-server-header: Apache/2.4.18 (Ubuntu)
+Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
+
+# Gobuster Scan: gobuster dir -u http://10.10.120.78 -w /usr/share/wordlists/dirb/big.txt
+/.htaccess            (Status: 403) [Size: 277]
+/.htpasswd            (Status: 403) [Size: 277]
+/files                (Status: 301) [Size: 312] [--> http://10.10.120.78/files/]
+/server-status        (Status: 403) [Size: 277]
+
+# Nikto scan: nikto -h $IP
+
++ Server: Apache/2.4.18 (Ubuntu)
++ The anti-clickjacking X-Frame-Options header is not present.
++ The X-XSS-Protection header is not defined. This header can hint to the user agent to protect against some forms of XSS
++ The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type
++ No CGI Directories found (use '-C all' to force check all possible dirs)
++ Server may leak inodes via ETags, header found with file /, inode: 328, size: 5b3e1b06be884, mtime: gzip
++ Apache/2.4.18 appears to be outdated (current is at least Apache/2.4.37). Apache 2.2.34 is the EOL for the 2.x branch.
++ Allowed HTTP Methods: GET, HEAD, POST, OPTIONS
+
+# hydra scan: 
+
+# http://10.10.120.78/files/notice.txt
+Whoever is leaving these damn Among Us memes in this share, it IS NOT FUNNY. People downloading documents from our website will think we are a joke! Now I dont know who it is, but Maya is looking pretty sus.
+
+# Domain landing page - "Contact us" redirects to emai
+ 
+No spice here! 
+
+Please excuse us as we develop our site. We want to make it the most stylish and convienient way to buy peppers. Plus, we need a web developer. BTW if you're a web developer, contact us. Otherwise, don't you worry. We'll be online shortly!
+
+ — Dev Team
+
+
+## notes
+# view-source:http://10.10.183.45/ - <!--when are we gonna update this??-->

